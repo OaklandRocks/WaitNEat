@@ -6,7 +6,9 @@
     // Angular Module
     'ngRoute',
     // Third-party modules.
-    'firebase'
+    'firebase',
+    // custom modules yoo.
+    'app.landing'
     ]);
 
 })();
