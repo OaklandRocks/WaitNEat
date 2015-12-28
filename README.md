@@ -1,4 +1,7 @@
-The app uses these technologies:
+## A Fun Restaurant waiting app.
+This is a fun tutorial that I used to help learn AngularJS
+
+## The app uses these technologies:
 
 * AngularJS 1.4.x
 * Firebase 2.2.x
@@ -6,9 +9,6 @@ The app uses these technologies:
 * Bootstrap 3.3.x
 * Zapier
 
-## Getting started
-
-The easiest way to get the code is to download it as a zip file. If you're familiar with Git and Github, you can also clone the repository.
 
 ## Run the application
 
