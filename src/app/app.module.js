@@ -8,7 +8,7 @@
     // Third-party modules.
     'firebase',
     // custom modules yoo.
-    'app.landing'
+    'app.landing',
     ]);
 
 })();
