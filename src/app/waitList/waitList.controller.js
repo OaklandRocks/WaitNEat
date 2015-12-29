@@ -6,7 +6,7 @@
     .controller('WaitListController', WaitListController);
 
   function WaitListController(){
-    // vm is 'this' instance of view model object
+    // vm is 'this' instance of controller instance
     // https://github.com/johnpapa/angular-styleguide#style-y032
     var vm = this;
 
