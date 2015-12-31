@@ -12,6 +12,12 @@
 
     vm.parties = ["data flowing"];
 
+    vm.addParty = addParty;
+
+    function addParty(){
+      vm.parties.push('whats up diggy dig dog');
+    }
+
   }
 
 })();
