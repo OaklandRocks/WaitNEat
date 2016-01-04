@@ -4,7 +4,7 @@
   angular
     .module('app.waitList')
     .controller('WaitListController', WaitListController);
-  WaitListController.$inject = ['firebaseArray'];
+  WaitListController.$inject = ['$firebaseArray'];
 
   function WaitListController($firebaseArray){
     // vm is 'this' instance of controller instance
