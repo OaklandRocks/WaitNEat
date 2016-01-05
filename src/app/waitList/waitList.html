@@ -15,6 +15,11 @@
 
   <button type="submit" class="btn btn-primary">Make Ressy Bro</button>
 </form>
-{{vm.newParty}}
-<br>
-{{vm.parties}}
+
+<div ng-repeat = "butts in vm.parties">
+  Name: {{butts.name}}
+  <br>
+  Phone: {{butts.phone}}
+  <br>
+  Size: {{butts.size}}
+</div>
