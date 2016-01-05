@@ -16,10 +16,29 @@
   <button type="submit" class="btn btn-primary">Make Ressy Bro</button>
 </form>
 
-<div ng-repeat = "butts in vm.parties">
-  Name: {{butts.name}}
-  <br>
-  Phone: {{butts.phone}}
-  <br>
-  Size: {{butts.size}}
-</div>
+<table class="table table-striped table-borderd">
+  <thead>
+    <tr>
+      <th>Done?</th>
+      <th>Info</th>
+      <th>Notified?</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tr ng-repeat="butts in vm.parties">
+    <td>
+      <button>Check box</button>
+    </td>
+    <td>
+      <div><strong>{{ butts.name}} {{ butts.size }} jabronis</strong></div>
+      <div>{{butts.phone}}</div>
+    </td>
+    <td>
+      <div>{{ butts.notified ? 'Yes': 'No'}}</div>
+    </td>
+    <td>
+      <button>button sends text message to party</button>
+      <button>button removes party</button>
+    </td>
+  </tr>
+</table>
