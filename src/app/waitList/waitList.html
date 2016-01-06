@@ -37,7 +37,7 @@
       <div>{{ butts.notified ? 'Yes': 'No'}}</div>
     </td>
     <td>
-      <--button>button sends text message to party<--/button>
+      <button ng-click="vm.sendTextMessage(butts)" class="btn btn-success">Text me BRO!!</button>
       <button ng-click="vm.removeParty(butts)"  class="btn btn-danger">Remove me BRO!</button>
     </td>
   </tr>
