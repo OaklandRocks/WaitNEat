@@ -11,7 +11,8 @@
     // https://github.com/johnpapa/angular-styleguide#style-y032
     var vm = this;
 
-    var fireParties = new Firebase('https://waitandeat-demo-ve.firebaseio.com/');
+    var fireParties = new Firebase('https://waitandeat-demo-ve.firebaseio.com/parties');
+    var fireTextMessages = new Firebase('https://waitandeat-demo-ve.firebaseio.com/textMessages');
 
     function Party() {
       this.name ='';
@@ -27,6 +28,7 @@
 
     vm.addParty = addParty;
     vm.removeParty = removeParty;
+    vm.sendTextMessage = sendTextMessage;
 
     function addParty(){
       vm.parties.$add(vm.newParty);
@@ -35,6 +37,17 @@
 
     function removeParty(butts){
       vm.parties.$remove(butts);
+    }
+
+    function sendTextMessage(butts){
+      var newTextMessage = {
+        phoneNumber: butts.phone,
+        size: butts.size,
+        name: butts.name
+      }
+      fireTextMessages.push(newTextMessage);
+      butts.notified = true;
+      vm.parties.$save(butts);
     }
 
   }
