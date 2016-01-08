@@ -9,7 +9,7 @@
   configFunction.$inject = ['$routeProvider'];
 
   function configFunction($routeProvider) {
-    $routeProvider.when('/', {
+    $routeProvider.when('/register', {
       templateUrl: 'app/auth/register.html',
       controller: 'AuthController',
       contorllerAs: 'vm'
