@@ -29,6 +29,7 @@
     vm.addParty = addParty;
     vm.removeParty = removeParty;
     vm.sendTextMessage = sendTextMessage;
+    vm.toggleDone = toggleDone;
 
     function addParty(){
       vm.parties.$add(vm.newParty);
@@ -47,6 +48,11 @@
       }
       fireTextMessages.push(newTextMessage);
       butts.notified = true;
+      vm.parties.$save(butts);
+    }
+
+    function toggleDone(butts){
+      // save any changes up to firebase
       vm.parties.$save(butts);
     }
 
