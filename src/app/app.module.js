@@ -9,7 +9,8 @@
     'firebase',
     // custom modules yoo.
     'app.landing',
-    'app.waitList'
+    'app.waitList',
+    'app.auth'
     ]);
 
 
