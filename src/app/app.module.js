@@ -8,9 +8,10 @@
     // Third-party modules.
     'firebase',
     // custom modules yoo.
+    'app.auth',
     'app.landing',
-    'app.waitList',
-    'app.auth'
+    'app.waitList'
+
     ]);
 
 
