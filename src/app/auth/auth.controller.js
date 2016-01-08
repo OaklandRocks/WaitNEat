@@ -5,8 +5,8 @@
     .module('app.auth')
     .controller('AuthController', AuthController);
 
-
-  function AuthController(){
+  AuthController.$inject =['$firebaseAuth']
+  function AuthController($firebaseAuth){
 
   }
 
