@@ -27,7 +27,7 @@
   </thead>
   <tr ng-repeat="butts in vm.parties">
     <td>
-      <button>Check box</button>
+      <input ng-model="butts.done" ng-change="vm.toggleDone(butts)" type="checkbox">
     </td>
     <td>
       <div><strong>{{ butts.name}} {{ butts.size }} jabronis</strong></div>
