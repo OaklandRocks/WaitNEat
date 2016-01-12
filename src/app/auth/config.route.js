@@ -12,7 +12,7 @@
     $routeProvider.when('/register', {
       templateUrl: 'app/auth/register.html',
       controller: 'AuthController',
-      contorllerAs: 'vm'
+      controllerAs: 'vm'
     });
   }
 
