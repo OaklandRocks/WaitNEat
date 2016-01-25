@@ -5,9 +5,9 @@
     .module('app.auth')
     .controller('AuthController', AuthController);
 
-  AuthController.$inject =['$firebaseAuth']
+  AuthController.$inject =['$location','$firebaseAuth']
 
-  function AuthController($firebaseAuth){
+  function AuthController($location, $firebaseAuth){
     var vm = this;
     // firebase reference
     var firebaseReference = new Firebase('https://waitandeat-demo-ve.firebaseio.com/register');
@@ -20,6 +20,7 @@
 
     vm.register = register;
     vm.login = login;
+    vm.logout = logout;
 
 
     function register(user){
@@ -42,6 +43,11 @@
         .catch(function(error) {
           console.log("nope read the error  "+ error + " your attempted password : "+ user.password + "your attempted email" + user.email)
         });
+    }
+    function logout() {
+      console.log("LOGGGINIG OUT")
+      firebaseAuthObject.$unauth();
+      $location.path('/');
     }
 
   }
