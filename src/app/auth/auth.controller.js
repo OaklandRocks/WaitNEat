@@ -19,6 +19,7 @@
     };
 
     vm.register = register;
+    vm.login = login;
 
 
     function register(user){
@@ -26,8 +27,20 @@
         .then(function(user){
           console.log("user: ", user)
         })
-        .catch(function(){
-          console.log("nope")
+        .catch(function(error){
+          console.log("nope"+ error)
+        });
+    }
+
+    function login(user){
+      return firebaseAuthObject.$authWithPassword(user)
+        .then(function(loggedInUser){
+          console.log("user: ", loggedInUser)
+
+
+        })
+        .catch(function(error) {
+          console.log("nope read the error  "+ error + " your attempted password : "+ user.password + "your attempted email" + user.email)
         });
     }
 
