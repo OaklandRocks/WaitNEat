@@ -9,6 +9,7 @@
     'firebase',
     // custom modules yoo.
     'app.auth',
+    'app.core',
     'app.landing',
     'app.waitList'
 
