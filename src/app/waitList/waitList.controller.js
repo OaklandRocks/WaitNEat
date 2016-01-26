@@ -4,12 +4,15 @@
   angular
     .module('app.waitList')
     .controller('WaitListController', WaitListController);
-  WaitListController.$inject = ['textMessageService','partyService'];
+  WaitListController.$inject = ['textMessageService','partyService', 'user'];
 
-  function WaitListController(textMessageService, partyService){
+  function WaitListController(textMessageService, partyService, user){
     // vm is 'this' instance of controller instance
     // https://github.com/johnpapa/angular-styleguide#style-y032
     var vm = this;
+
+    // log user to console
+    console.log(user)
 
     vm.newParty = new partyService.Party();
 
