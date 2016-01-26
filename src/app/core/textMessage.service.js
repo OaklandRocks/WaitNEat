@@ -22,7 +22,7 @@
       }
       firebaseDataService.textMessages.push(newTextMessage);
       butts.notified = true;
-      vm.parties.$save(butts);
+      parties.$save(butts);
     }
 
   }

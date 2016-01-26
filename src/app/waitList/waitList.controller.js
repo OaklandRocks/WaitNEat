@@ -4,9 +4,9 @@
   angular
     .module('app.waitList')
     .controller('WaitListController', WaitListController);
-  WaitListController.$inject = ['firebaseDataService', 'partyService'];
+  WaitListController.$inject = ['textMessageService','partyService'];
 
-  function WaitListController(firebaseDataService, partyService){
+  function WaitListController(textMessageService, partyService){
     // vm is 'this' instance of controller instance
     // https://github.com/johnpapa/angular-styleguide#style-y032
     var vm = this;
@@ -30,14 +30,15 @@
     }
 
     function sendTextMessage(butts){
-      var newTextMessage = {
-        phoneNumber: butts.phone,
-        size: butts.size,
-        name: butts.name
-      }
-      firebaseDataService.textMessages.push(newTextMessage);
-      butts.notified = true;
-      vm.parties.$save(butts);
+      textMessageService.sendTextMessage(butts, vm.parties);
+      // var newTextMessage = {
+      //   phoneNumber: butts.phone,
+      //   size: butts.size,
+      //   name: butts.name
+      // }
+      // firebaseDataService.textMessages.push(newTextMessage);
+      // butts.notified = true;
+      // vm.parties.$save(butts);
     }
 
     function toggleDone(butts){
