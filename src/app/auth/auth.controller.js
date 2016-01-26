@@ -34,9 +34,10 @@
     }
 
     function login(user){
-      return firebaseAuthObject.$authWithPassword(user)
+      return authService.login(user)
         .then(function(loggedInUser){
           console.log("user: ", loggedInUser)
+          $location.path('/waitList')
 
 
         })

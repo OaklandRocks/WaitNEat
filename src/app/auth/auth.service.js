@@ -12,12 +12,17 @@
 
     var service = {
       register: register,
+      login: login
     };
 
     return service;
     /////////////////////////
     function register(user) {
       return firebaseAuthObject.$createUser(user)
+    }
+
+    function login(user) {
+      return firebaseAuthObject.$authWithPassword(user);
     }
   }
 })();
