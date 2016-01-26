@@ -4,20 +4,16 @@
   angular
     .module('app.waitList')
     .controller('WaitListController', WaitListController);
-  WaitListController.$inject = ['$firebaseArray', 'FIREBASE_URL', 'partyService'];
+  WaitListController.$inject = ['firebaseDataService', 'partyService'];
 
-  function WaitListController($firebaseArray, FIREBASE_URL, partyService){
+  function WaitListController(firebaseDataService, partyService){
     // vm is 'this' instance of controller instance
     // https://github.com/johnpapa/angular-styleguide#style-y032
     var vm = this;
 
-    var fireParties = new Firebase(FIREBASE_URL + 'parties');
-    var fireTextMessages = new Firebase(FIREBASE_URL + 'textMessages');
-
-
     vm.newParty = new partyService.Party();
 
-    vm.parties = $firebaseArray(fireParties);
+    vm.parties = partyService.parties;
 
     vm.addParty = addParty;
     vm.removeParty = removeParty;
@@ -39,7 +35,7 @@
         size: butts.size,
         name: butts.name
       }
-      fireTextMessages.push(newTextMessage);
+      firebaseDataService.textMessages.push(newTextMessage);
       butts.notified = true;
       vm.parties.$save(butts);
     }
