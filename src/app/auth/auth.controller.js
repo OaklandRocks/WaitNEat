@@ -5,13 +5,10 @@
     .module('app.auth')
     .controller('AuthController', AuthController);
 
-  AuthController.$inject =['$location','$firebaseAuth','FIREBASE_URL', 'authService']
+  AuthController.$inject =['$location', 'authService']
 
-  function AuthController($location, $firebaseAuth, FIREBASE_URL, authService){
+  function AuthController($location, authService){
     var vm = this;
-    // firebase reference
-    var firebaseReference = new Firebase(FIREBASE_URL);
-    var firebaseAuthObject = $firebaseAuth(firebaseReference);
 
     vm.user = {
       email: '',
@@ -47,7 +44,7 @@
     }
     function logout() {
       console.log("LOGGGINIG OUT")
-      firebaseAuthObject.$unauth();
+      authService.logout();
       $location.path('/');
     }
 
